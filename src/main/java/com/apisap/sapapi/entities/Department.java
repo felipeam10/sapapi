@@ -1,10 +1,15 @@
 package com.apisap.sapapi.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "tb_department")
 public class Department {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Double price;
 
     public Department(){}
 
@@ -27,13 +32,5 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 }
